@@ -25,16 +25,12 @@ if __name__ == "__main__":
 
     # Run the simulation
     simulation.run_simulation()
-
-    # Access and process the final temperature data (T) after simulation
-    # (Add your code for further analysis or output)
-    print(f"Final temperature distribution:\n {simulation.T}")
-    
+   
     final_temperature = simulation.T
     X = simulation.X
     Y = simulation.Y
 
-    # Plot temperature using contourf
+    # Plot temperature 
     plt.contourf(X, Y, final_temperature, cmap="RdGy")  # Adjust colormap as desired
     plt.colorbar(label="Temperature (°C)")
     plt.xlabel("X (cm)")
