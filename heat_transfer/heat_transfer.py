@@ -1,6 +1,4 @@
 import numpy as np
-
-
 class HeatTransfer:
     """
     Simulates heat transfer representing a beer can.
@@ -10,13 +8,6 @@ class HeatTransfer:
         """
         Initializes the simulation parameters and loads the grid data.
 
-        Args:
-            beer_initial_temperature (float): Initial temperature of the beer.
-            room_temperature (float): Temperature of the surrounding room.
-            grid_directory (str): Directory containing the grid data files.
-            dt (float): Time step for the simulation.
-            final_time (float): Total simulation time.
-            beer_density (float): Density of the beer.
         """
 
         self.beer_initial_temperature = beer_initial_temperature
@@ -32,9 +23,7 @@ class HeatTransfer:
     def load_grid(self, grid_directory):
         """
         Loads the X and Y coordinates of the grid points from separate files.
-
-        Args:
-            grid_directory (str): Directory containing the grid data files.
+        
         """
 
         self.X = np.loadtxt(f"{grid_directory}/grid_X.dat") * 100
@@ -63,14 +52,8 @@ class HeatTransfer:
     def update_temperature(self, i, j):
         """
         Calculates the new temperature at a specific grid point based on the
-        second derivative of the temperature in X and Y directions.
+        diffusion of the temperature in X and Y directions.
 
-        Args:
-            i (int): Index of the grid point in X direction.
-            j (int): Index of the grid point in Y direction.
-
-        Returns:
-            float: Updated temperature at the grid point.
         """
 
         dx = self.X[i, j] - self.X[i, j - 1]
@@ -82,6 +65,7 @@ class HeatTransfer:
         alpha = self.thermal_conductivity(self.T[i, j]) / (
             self.specific_heat_capacity(self.T[i, j]) * self.beer_density
         )
+        alpha = alpha * 10
 
         return self.T[i, j] + self.dt * alpha * (F2x + F2y)
 

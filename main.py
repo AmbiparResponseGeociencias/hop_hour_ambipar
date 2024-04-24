@@ -9,8 +9,8 @@ if __name__ == "__main__":
     beer_initial_temperature = 4
     room_temperature = 22
     grid_directory = "D:\\d-users\\d-Naviersat\\Repositories\\hop_hour_ambipar\\grid"  # Update path if needed
-    dt = 0.1
-    final_time = 200
+    dt = 0.001
+    final_time = 80
     beer_density = 1048
 
     # Create the simulation object
