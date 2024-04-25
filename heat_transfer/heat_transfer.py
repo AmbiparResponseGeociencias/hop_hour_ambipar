@@ -4,7 +4,9 @@ class HeatTransfer:
     Simulates heat transfer representing a beer can.
     """
 
-    def __init__(self, beer_initial_temperature, room_temperature, grid_directory, dt, final_time, beer_density, save_path=None, save_interval=None):
+    def __init__(self, beer_initial_temperature, room_temperature,
+                 grid_directory, dt, final_time, beer_density, 
+                 save_path=None, save_interval=None):
         """
         Initializes the simulation parameters and loads the grid data.
 
@@ -29,8 +31,8 @@ class HeatTransfer:
         
         """
 
-        self.X = np.loadtxt(f"{grid_directory}/grid_X.dat") * 100
-        self.Y = np.loadtxt(f"{grid_directory}/grid_Y.dat") * 100
+        self.X = np.loadtxt(f"{grid_directory}/grid_X.dat")
+        self.Y = np.loadtxt(f"{grid_directory}/grid_Y.dat")
 
     def initialize_temperature(self):
         """
@@ -50,11 +52,11 @@ class HeatTransfer:
         for step in range(self.n_steps):
            
             current_time = (step + 1) * self.dt
-            
+
             for i in range(1, self.T.shape[0] - 1):
                 for j in range(1, self.T.shape[1] - 1):
                     self.T[i, j] = self.update_temperature(i, j)
-        
+            
             # Save results if save_path and save_interval are defined
             if self.save_path and self.save_interval:
                 if current_time % self.save_interval == 0:
@@ -76,7 +78,6 @@ class HeatTransfer:
         alpha = self.thermal_conductivity(self.T[i, j]) / (
             self.specific_heat_capacity(self.T[i, j]) * self.beer_density
         )
-        alpha = alpha * 10
 
         return self.T[i, j] + self.dt * alpha * (F2x + F2y)
     
