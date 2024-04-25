@@ -23,7 +23,7 @@ do modelo é construída de forma acompanhar o desenho da garrafa.
   "final_time":  600,             # tempo total de simulação em segundos  
   "beer_density": 1048,           # densidade do líquido  
   "save_path": "path",            # caminho para salvar os resultados  
-  "save_interval": 10             # intervalo de saída dos resultados em segundos
+  "save_interval": 10             # intervalo de saída dos resultados em segundos  
   }
 
   2. Executar o programa principal
@@ -41,6 +41,6 @@ Este programa foi concebido de forma exclusiva para a geração de resultados nu
 
 **Créditos**:
 
-Leonardo Carvalho de Jesus 
+Leonardo Carvalho de Jesus * 2024  
 Ambipar Response Geociências
 
