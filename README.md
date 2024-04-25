@@ -1,10 +1,9 @@
-# Difusão de temperatura em garrafa de cerveja - hop_hour_ambipar
+# Difusão de Temperatura - hop_hour_ambipar
 
 Este programa calcula a difusão de temperatura em uma garrafa padrão de cerveja
 de 600 mL, considerando a temperatura do líquido e a temperatura do ambiente.
 
-O modelo de difusão de calor é baseado na solução numérica da equação de Fourier (Eq. 1),
-considerando a densidade ($\rho$), a capacidade de calor específica ($c_p$) e a condutividade térmica ($\kappa$) da cerveja, dados por Bhuvaneswari & Anandharamakrishnan (2014).
+O modelo é baseado na solução numérica da equação difusão de temperatura (Eq. 1), considerando a densidade ($\rho$), a capacidade de calor específica ($c_p$) e a condutividade térmica ($\kappa$) da cerveja, dados por Bhuvaneswari & Anandharamakrishnan (2014).
 
 $\displaystyle \frac{\partial T}{\partial t} = \left(\frac{\kappa}{c_p * \rho} \right) * \left(\frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} \right)$     Eq. 1
 
