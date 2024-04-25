@@ -49,7 +49,7 @@ class HeatTransfer:
         
         for step in range(self.n_steps):
            
-            current_time = step * self.dt
+            current_time = (step + 1) * self.dt
             
             for i in range(1, self.T.shape[0] - 1):
                 for j in range(1, self.T.shape[1] - 1):

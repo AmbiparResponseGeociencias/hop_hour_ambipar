@@ -3,7 +3,7 @@
   "room_temperature": 22,
   "grid_directory": "D:\\d-users\\d-Naviersat\\Repositories\\hop_hour_ambipar\\grid",
   "dt": 0.001,
-  "final_time": 40,
+  "final_time": 400,
   "beer_density": 1048,
   "save_path": "D:\\d-users\\d-Naviersat\\Repositories\\hop_hour_ambipar\\results",
   "save_interval": 5
