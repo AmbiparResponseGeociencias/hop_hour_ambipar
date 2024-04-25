@@ -11,17 +11,24 @@ O esquema numérico é baseado na solução numérica das equações diferenciai
 do método de diferenças finitas para as derivadas primeiraas e segundas. A malha do
 do modelo é construída de forma acompanhar o desenho da garrafa.
 
-Uso:
+**Uso**:
 
 1. Editar ./config/simulation_config.jason
 
   "beer_initial_temperature": 10, # temperatura inicial do líquido em °C
+
   "room_temperature": 22,         # temperatura do ambiente em °C
+
   "grid_directory": "path",       # caminho do diretório com a malha 
+
   "dt": 0.00001,                  # passo de tempo do modelo em segundos
+
   "final_time":  600,             # tempo total de simulação em segundos
+
   "beer_density": 1048,           # densidade do líquido 
+
   "save_path": "path",            # caminho para salvar os resultados
+  
   "save_interval": 10             # intervalo de saída dos resultados em segundos
 
   2. Executar o programa principal
@@ -33,11 +40,11 @@ Uso:
   * numpy
   * matplotlib
 
-Disclaimer:
+**Disclaimer**:
 
 Este programa foi concebido de forma exclusiva para a geração de resultados numéricos com o propósito de ensino e informação. Embora a física implementada no modelo seja correta, sua utilização está restrita às finalidades expressas neste README. A Ambipar Response Geociências e seus colaboradores não assumem qualquer responsabilidade por danos decorrentes do uso indevido deste modelo.
 
-Créditos:
+**Créditos**:
 
 Leonardo Carvalho de Jesus 
 Ambipar Response Geociências
