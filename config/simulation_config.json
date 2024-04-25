@@ -1,10 +1,10 @@
 {
   "beer_initial_temperature": 4, 
   "room_temperature": 22,
-  "grid_directory": "D:\\d-users\\d-Naviersat\\d-Projetos\\d-Control\\HopHour\\grid",
-  "dt": 0.1,
-  "final_time": 2000,
+  "grid_directory": "D:\\d-users\\d-Naviersat\\Repositories\\hop_hour_ambipar\\grid",
+  "dt": 0.001,
+  "final_time": 40,
   "beer_density": 1048,
-  "save_path": "simulation_results",
-  "save_interval": 100
+  "save_path": "D:\\d-users\\d-Naviersat\\Repositories\\hop_hour_ambipar\\results",
+  "save_interval": 5
 }

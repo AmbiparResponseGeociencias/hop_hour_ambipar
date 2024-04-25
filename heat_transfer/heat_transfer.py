@@ -4,7 +4,7 @@ class HeatTransfer:
     Simulates heat transfer representing a beer can.
     """
 
-    def __init__(self, beer_initial_temperature, room_temperature, grid_directory, dt, final_time, beer_density):
+    def __init__(self, beer_initial_temperature, room_temperature, grid_directory, dt, final_time, beer_density, save_path=None, save_interval=None):
         """
         Initializes the simulation parameters and loads the grid data.
 
@@ -19,6 +19,9 @@ class HeatTransfer:
 
         self.load_grid(grid_directory)
         self.initialize_temperature()
+        
+        self.save_path = save_path
+        self.save_interval = save_interval
 
     def load_grid(self, grid_directory):
         """
@@ -43,11 +46,19 @@ class HeatTransfer:
         """
         Runs the heat transfer simulation.
         """
-
-        for _ in range(self.n_steps):
+        
+        for step in range(self.n_steps):
+           
+            current_time = step * self.dt
+            
             for i in range(1, self.T.shape[0] - 1):
                 for j in range(1, self.T.shape[1] - 1):
                     self.T[i, j] = self.update_temperature(i, j)
+        
+            # Save results if save_path and save_interval are defined
+            if self.save_path and self.save_interval:
+                if current_time % self.save_interval == 0:
+                    self.save_results(current_time, self.T)
 
     def update_temperature(self, i, j):
         """
@@ -68,6 +79,13 @@ class HeatTransfer:
         alpha = alpha * 10
 
         return self.T[i, j] + self.dt * alpha * (F2x + F2y)
+    
+    def save_results(self, current_time, temperature_data):
+
+        step_string = f"{int(current_time):04d}"  # Format step as 4-digit string
+        filename = f"temperature_{step_string}.dat"
+        filepath = f"{self.save_path}/{filename}"
+        np.savetxt(filepath, temperature_data, delimiter=" ", fmt="%.6e")
 
     def specific_heat_capacity(self, temperature):
 

@@ -3,17 +3,23 @@ sys.path.append(".\hop_hour_ambipar\heat_transfer")
 
 from heat_transfer import HeatTransfer  # Import the HeatTransfer class
 import matplotlib.pyplot as plt
+import json
 
 if __name__ == "__main__":
     # Simulation parameters
-    beer_initial_temperature = 4
-    room_temperature = 22
-    grid_directory = "D:\\d-users\\d-Naviersat\\Repositories\\hop_hour_ambipar\\grid"  # Update path if needed
-    dt = 0.001
-    final_time = 80
-    beer_density = 1048
+    with open("hop_hour_ambipar/config/simulation_config.json", "r") as f:
+        params = json.load(f)
 
-    # Create the simulation object
+    beer_initial_temperature = params["beer_initial_temperature"]
+    room_temperature = params["room_temperature"]
+    grid_directory = params["grid_directory"]
+    dt = params["dt"]
+    final_time = params["final_time"]
+    beer_density = params["beer_density"]
+    save_path = params.get("save_path", None) 
+    save_interval = params.get("save_interval", None)
+
+    # simulation object
     simulation = HeatTransfer(
         beer_initial_temperature,
         room_temperature,
@@ -21,6 +27,8 @@ if __name__ == "__main__":
         dt,
         final_time,
         beer_density,
+        save_path,
+        save_interval
     )
 
     # Run the simulation
