@@ -4,10 +4,9 @@ Este programa calcula a difusão de temperatura em uma garrafa padrão de cervej
 de 600 mL, considerando a temperatura do líquido e a temperatura do ambiente.
 
 O modelo de difusão de calor é baseado na solução numérica da equação de Fourier (Eq. 1),
-considerando a capacidade de calor específica e a condutividade térmica da cerveja,
-dados por Bhuvaneswari & Anandharamakrishnan (2014).
+considerando a densidade da cerveja ($\rho$), a capacidade de calor específica ($c_p$) e a condutividade térmica ($\kappa$) da cerveja, dados por Bhuvaneswari & Anandharamakrishnan (2014).
 
-$\partial T/\partial t = (\kappa/(\c_p * \rho)) * (\partial^2 T/\partial x^2 + \partial^2 T /\partial y^2)$
+$\frac{\partial T}{\partial t} = (\frac{\kappa}{(c_p * \rho)}) * (\frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2})$     Eq. 1
 
 O esquema numérico é baseado na resolução numérica das equações diferenciais utilizando
 o método de diferenças finitas para as primeiras e segundas derivadas. A malha do modelo é
