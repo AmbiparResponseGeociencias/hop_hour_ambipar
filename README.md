@@ -14,27 +14,22 @@ do modelo é construída de forma acompanhar o desenho da garrafa.
 **Uso**:
 
 1. Editar ./config/simulation_config.jason
-
-  "beer_initial_temperature": 10, # temperatura inicial do líquido em °C
-
-  "room_temperature": 22,         # temperatura do ambiente em °C
-
-  "grid_directory": "path",       # caminho do diretório com a malha 
-
-  "dt": 0.00001,                  # passo de tempo do modelo em segundos
-
-  "final_time":  600,             # tempo total de simulação em segundos
-
-  "beer_density": 1048,           # densidade do líquido 
-
-  "save_path": "path",            # caminho para salvar os resultados
   
+  {  
+  "beer_initial_temperature": 10, # temperatura inicial do líquido em °C  
+  "room_temperature": 22,         # temperatura do ambiente em °C  
+  "grid_directory": "path",       # caminho do diretório com a malha  
+  "dt": 0.00001,                  # passo de tempo do modelo em segundos  
+  "final_time":  600,             # tempo total de simulação em segundos  
+  "beer_density": 1048,           # densidade do líquido  
+  "save_path": "path",            # caminho para salvar os resultados  
   "save_interval": 10             # intervalo de saída dos resultados em segundos
+  }
 
   2. Executar o programa principal
   >> python main.py
 
-  Pré-requisitos:
+  **Pré-requisitos**:
 
   * python
   * numpy
